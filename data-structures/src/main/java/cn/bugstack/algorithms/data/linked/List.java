@@ -1,4 +1,4 @@
-package cn.bugstack.algorithms;
+package cn.bugstack.algorithms.data.linked;
 
 /**
  * @author 小傅哥，微信：fustack
