@@ -8,8 +8,8 @@
 
 `B` - 初学者，`A` - 进阶
 
-- [ ] `B` 链表
-- [ ] `B` 双向链表
+- [x] [`B` 链表](https://bugstack.cn/md/algorithm/data-structures/2022-07-22-linked-list.html)
+- [x] [`B` 数组](https://bugstack.cn/md/algorithm/data-structures/2022-07-30-array-list.html)
 - [ ] `B` 队列
 - [ ] `B` 栈
 - [ ] `B` 哈希表(散列)
