@@ -24,3 +24,4 @@ hs_err_pid*
 /data-structures/data-structures.iml
 /.idea/
 /doc/.*.bkp
+/doc/.*.dtmp

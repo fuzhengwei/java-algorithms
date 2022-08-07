@@ -2,10 +2,8 @@ package cn.bugstack.algorithms.test;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.*;
 
 public class ApiTest {
 
@@ -49,6 +47,75 @@ public class ApiTest {
         System.arraycopy(i, 0, j, 0, 3);
 
         System.out.println(Arrays.toString(j));
+    }
+
+    @Test
+    public void test_deque(){
+        Deque<String> deque = new LinkedList<>();
+        deque.offer("");
+        deque.push("");
+        deque.pop();
+        deque.peek();
+        String peek = deque.peek();
+
+        deque = new ArrayDeque<>();
+        deque.push("");
+
+        deque = new LinkedBlockingDeque<>();
+        deque.push("");
+
+        deque = new ConcurrentLinkedDeque<>();
+        deque.push("");
+
+        Queue delayQueue = new DelayQueue<>();
+        delayQueue.add(null);
+    }
+
+    @Test
+    public void test_queue() throws InterruptedException {
+        Queue<Job> queue = new DelayQueue<>();
+        queue.add(new Job("1号",1000L));
+        queue.add(new Job("3号",3000L));
+        queue.add(new Job("4号",4000L));
+        queue.add(new Job("5号",5000L));
+        queue.add(new Job("2号",2000L));
+
+        while (true){
+            Job poll = queue.poll();
+            if (null == poll) {
+                Thread.sleep(10);
+                continue;
+            }
+            System.out.println(poll.getName());
+        }
+    }
+
+    class Job implements Delayed {
+
+        private String name;
+        private Long begin;
+        private Long delayTime;
+
+        public Job(String name, Long delayTime) {
+            this.name = name;
+            this.begin = System.currentTimeMillis();
+            this.delayTime = delayTime;//延时时长
+        }
+
+        @Override
+        public long getDelay(TimeUnit unit) {
+            return unit.convert(begin + delayTime - System.currentTimeMillis(), TimeUnit.MICROSECONDS);
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        @Override
+        public int compareTo(Delayed o) {
+            Job job = (Job) o;
+            return (int)(this.getDelay(TimeUnit.MICROSECONDS) - job.getDelay(TimeUnit.MICROSECONDS));
+        }
     }
 
 }
