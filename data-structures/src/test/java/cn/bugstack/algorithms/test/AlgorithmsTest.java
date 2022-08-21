@@ -6,7 +6,11 @@ import cn.bugstack.algorithms.data.linked.List;
 import cn.bugstack.algorithms.data.queue.DelayQueue;
 import cn.bugstack.algorithms.data.queue.Delayed;
 import cn.bugstack.algorithms.data.queue.Queue;
+import cn.bugstack.algorithms.data.stack.ArrayDeque;
+import cn.bugstack.algorithms.data.stack.Deque;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,6 +21,8 @@ import java.util.concurrent.TimeUnit;
  * @Copyright 公众号：bugstack虫洞栈 | 博客：https://bugstack.cn - 沉淀、分享、成长，让自己和他人都能有所收获！
  */
 public class AlgorithmsTest {
+
+    private Logger logger = LoggerFactory.getLogger(AlgorithmsTest.class);
 
     @Test
     public void test_linked_list() {
@@ -57,6 +63,7 @@ public class AlgorithmsTest {
 
         System.out.println(list);
     }
+
     //        queue.add(new Job("1号",1000L));
 //        queue.add(new Job("3号",3000L));
 //        queue.add(new Job("4号",4000L));
@@ -115,6 +122,42 @@ public class AlgorithmsTest {
             Job job = (Job) o;
             return (int) (this.getDelay(TimeUnit.MICROSECONDS) - job.getDelay(TimeUnit.MICROSECONDS));
         }
+    }
+
+    @Test
+    public void test_arraycopy() {
+        Object[] elements = new Object[8];
+        elements[7] = 7;
+        elements[6] = 6;
+        elements[5] = 5;
+        elements[4] = 4;
+        elements[3] = 3;
+        elements[2] = 2;
+        elements[1] = 1;
+        elements[0] = 0;
+
+        Object[] a = new Object[16];
+
+    }
+
+    @Test
+    public void test_stack() {
+
+        Deque<Integer> deque = new ArrayDeque<>();
+        deque.push(1);
+        deque.push(2);
+        deque.push(3);
+        deque.push(4);
+        deque.push(5);
+        deque.push(6);
+        deque.push(7);
+
+        logger.info("弹出元素：{}", deque.pop());
+        logger.info("弹出元素：{}", deque.pop());
+        logger.info("弹出元素：{}", deque.pop());
+        logger.info("弹出元素：{}", deque.pop());
+        logger.info("弹出元素：{}", deque.pop());
+        logger.info("弹出元素：{}", deque.pop());
     }
 
 }

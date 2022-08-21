@@ -14,6 +14,39 @@ public class ApiTest {
     }
 
     @Test
+    public void test_stack() {
+        Stack<String> stack = new Stack<>();
+
+        stack.push("1");
+        stack.push("2");
+        stack.push("3");
+
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+
+        Deque<String> deque = new LinkedList<>();
+        deque.push("1");
+        deque.push("2");
+        deque.push("3");
+
+        System.out.println(deque.pop());
+        System.out.println(deque.pop());
+        System.out.println(deque.pop());
+
+        Deque<Integer> stackArray = new ArrayDeque<>();
+        stackArray.push(1);
+        stackArray.push(2);
+        stackArray.push(3);
+
+        System.out.println(stackArray.pop());
+        System.out.println(stackArray.pop());
+        System.out.println(stackArray.pop());
+
+
+    }
+
+    @Test
     public void test_array_list() {
         List<String> list = new ArrayList<>();
         list.add("");
@@ -50,7 +83,7 @@ public class ApiTest {
     }
 
     @Test
-    public void test_deque(){
+    public void test_deque() {
         Deque<String> deque = new LinkedList<>();
         deque.offer("");
         deque.push("");
@@ -74,13 +107,13 @@ public class ApiTest {
     @Test
     public void test_queue() throws InterruptedException {
         Queue<Job> queue = new DelayQueue<>();
-        queue.add(new Job("1号",1000L));
-        queue.add(new Job("3号",3000L));
-        queue.add(new Job("4号",4000L));
-        queue.add(new Job("5号",5000L));
-        queue.add(new Job("2号",2000L));
+        queue.add(new Job("1号", 1000L));
+        queue.add(new Job("3号", 3000L));
+        queue.add(new Job("4号", 4000L));
+        queue.add(new Job("5号", 5000L));
+        queue.add(new Job("2号", 2000L));
 
-        while (true){
+        while (true) {
             Job poll = queue.poll();
             if (null == poll) {
                 Thread.sleep(10);
@@ -114,7 +147,7 @@ public class ApiTest {
         @Override
         public int compareTo(Delayed o) {
             Job job = (Job) o;
-            return (int)(this.getDelay(TimeUnit.MICROSECONDS) - job.getDelay(TimeUnit.MICROSECONDS));
+            return (int) (this.getDelay(TimeUnit.MICROSECONDS) - job.getDelay(TimeUnit.MICROSECONDS));
         }
     }
 
