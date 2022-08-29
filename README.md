@@ -12,7 +12,7 @@
 - [x] [`B` 数组](https://bugstack.cn/md/algorithm/data-structures/2022-07-30-array-list.html)
 - [x] [`B` 队列&二叉堆](https://bugstack.cn/md/algorithm/data-structures/2022-08-06-queue.html)
 - [x] [`B` 栈](https://bugstack.cn/md/algorithm/data-structures/2022-08-17-stack.html)
-- [ ] `B` 哈希表(散列)
+- [x] [`B` 哈希表(散列)](https://bugstack.cn/md/algorithm/data-structures/2022-08-27-hash-table.html)
 - [ ] `B` 堆 - 最大堆 & 最小堆
 - [ ] `B` 优先队列
 - [ ] `A` 字典树
