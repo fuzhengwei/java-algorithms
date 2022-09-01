@@ -1,5 +1,7 @@
 # Java 数据结构和算法
 
+![](https://bugstack.cn/images/article/algorithm/algorithms-220723-00.png?raw=true)
+
 本仓库预包含多种基于 Java 的算法与数据结构学习。
 
 ## 数据结构
