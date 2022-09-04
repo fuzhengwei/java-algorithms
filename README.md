@@ -15,8 +15,7 @@
 - [x] [`B` 队列&二叉堆](https://bugstack.cn/md/algorithm/data-structures/2022-08-06-queue.html)
 - [x] [`B` 栈](https://bugstack.cn/md/algorithm/data-structures/2022-08-17-stack.html)
 - [x] [`B` 哈希表(散列)](https://bugstack.cn/md/algorithm/data-structures/2022-08-27-hash-table.html)
-- [ ] `B` 堆 - 最大堆 & 最小堆
-- [ ] `B` 优先队列
+- [x] [`B` 堆 - 最大堆 & 最小堆](https://bugstack.cn/md/algorithm/data-structures/2022-09-03-heap.html)
 - [ ] `A` 字典树
   - [ ] `A` 二叉查找树
   - [ ] `A` AVL 树
