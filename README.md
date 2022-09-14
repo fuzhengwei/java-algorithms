@@ -31,3 +31,7 @@
 算法是如何解决一类问题的明确规范。算法是一组精确定义操作序列的规则。
 
 ... 整理中
+
+## 资料
+
+- 数据结构术语列表：[https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%AF%E8%AF%AD%E5%88%97%E8%A1%A8](https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%AF%E8%AF%AD%E5%88%97%E8%A1%A8)

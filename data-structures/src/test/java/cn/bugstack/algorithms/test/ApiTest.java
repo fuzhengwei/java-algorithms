@@ -7,6 +7,11 @@ import java.util.concurrent.*;
 
 public class ApiTest {
 
+    public static void main(String[] args) {
+        String s = Integer.toHexString(Integer.MAX_VALUE);
+        System.out.println(s);
+    }
+
     @Test
     public void test_linked_list() {
         LinkedList<String> list = new LinkedList<>();
@@ -148,6 +153,29 @@ public class ApiTest {
         public int compareTo(Delayed o) {
             Job job = (Job) o;
             return (int) (this.getDelay(TimeUnit.MICROSECONDS) - job.getDelay(TimeUnit.MICROSECONDS));
+        }
+    }
+
+    @Test
+    public void test_Deque() {
+        Deque<String> deque = new ArrayDeque<String>(1);
+
+        deque.push("a");
+//        deque.push("b");
+//        deque.push("c");
+//        deque.push("d");
+//
+//        deque.offerLast("e");
+//        deque.offerLast("f");
+//        deque.offerLast("g");
+//        deque.offerLast("h");  // 这时候扩容了
+
+//        deque.push("i");
+//        deque.offerLast("j");
+
+        System.out.println("数据出栈：");
+        while (!deque.isEmpty()) {
+            System.out.print(deque.pop() + " ");
         }
     }
 
