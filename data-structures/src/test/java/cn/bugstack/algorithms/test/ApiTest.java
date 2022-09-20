@@ -7,11 +7,6 @@ import java.util.concurrent.*;
 
 public class ApiTest {
 
-    public static void main(String[] args) {
-        String s = Integer.toHexString(Integer.MAX_VALUE);
-        System.out.println(s);
-    }
-
     @Test
     public void test_linked_list() {
         LinkedList<String> list = new LinkedList<>();
