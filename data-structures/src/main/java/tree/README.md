@@ -1,9 +1,6 @@
-# 《Java 数据结构和算法》第8章：树（BST）
+资料
 
-作者：小傅哥
-<br/>博客：[https://bugstack.cn](https://bugstack.cn)
 
-> 沉淀、分享、成长，让自己和他人都能有所收获！😄
 
 ## 一、前言
 
@@ -15,7 +12,7 @@
 
 二叉搜索树（Binary Search Tree），也称二叉查找树。如果你看见有序二叉树（Ordered Binary tree）、排序二叉树（Sorted Binary Tree）那么说的都是一个东西。
 
-![](https://bugstack.cn/images/article/algorithm/tree-bst-01.png)
+![](/Users/fuzhengwei1/Documents/develop/github/java-algorithms/data-structures/src/main/java/tree/images/tree-bst-01.png)
 
 - 若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值；
 - 若任意节点的右子树不空，则右子树上所有节点的值均大于它的根节点的值；
@@ -166,7 +163,7 @@ private Node transplant(Node delNode, Node addNode) {
 
 #### 4.1 删除单节点
 
-![](https://bugstack.cn/images/article/algorithm/tree-bst-02.png)
+![](/Users/fuzhengwei1/Documents/develop/github/java-algorithms/data-structures/src/main/java/tree/images/tree-bst-02.png)
 
 - 待删除节点14，判断此节点的父节点的孩子节点，哪个等于14，找出左右
 - 把待删节点的右孩子节点，挂到删除节点的右节点
@@ -174,7 +171,7 @@ private Node transplant(Node delNode, Node addNode) {
 
 #### 4.2 删除双节点
 
-![](https://bugstack.cn/images/article/algorithm/tree-bst-03.png)
+![](/Users/fuzhengwei1/Documents/develop/github/java-algorithms/data-structures/src/main/java/tree/images/tree-bst-03.png)
 
 - 待删除节点64，含有双子节点，则需要根据第一个右子节点查找最小左子节点。从89到72，如果有比72还小的左子节点，继续排查。
 - 排查到节点72，将72这个准备替换待删元素的节点，与右子节点73进行位置交换，过程与 4.1 相同。使用交换函数 transplant

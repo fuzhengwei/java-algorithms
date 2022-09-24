@@ -2,12 +2,16 @@ package tree;
 
 public class Node {
 
+    public Class<?> clazz;
     public Integer value;
     public Node parent;
     public Node left;
     public Node right;
+    // AVL 树所需属性
+    public int height;
 
-    public Node(Integer value, Node parent, Node left, Node right) {
+    public Node(Class<?> clazz ,Integer value, Node parent, Node left, Node right) {
+        this.clazz = clazz;
         this.value = value;
         this.parent = parent;
         this.left = left;

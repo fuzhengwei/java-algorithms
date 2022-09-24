@@ -2,13 +2,13 @@ package tree;
 
 public class BinarySearchTree extends AbstractTree {
 
-    public Node root;
-
     protected int size;
 
     public Node insert(int e) {
+        // 缓存
+        elementList.add(e);
         if (null == root) {
-            root = new Node(e, null, null, null);
+            root = new Node(this.getClass(), e, null, null, null);
             size++;
             return root;
         }
@@ -27,7 +27,7 @@ public class BinarySearchTree extends AbstractTree {
         }
 
         // 插入元素
-        Node newNode = new Node(e, parent, null, null);
+        Node newNode = new Node(this.getClass(), e, parent, null, null);
         if (parent.value > newNode.value) {
             parent.left = newNode;
         } else {
@@ -39,6 +39,9 @@ public class BinarySearchTree extends AbstractTree {
     }
 
     public Node delete(int e) {
+        // 缓存
+        elementList.add(e);
+
         Node delNode = search(e);
         if (null == delNode) return null;
         return delete(delNode);
@@ -56,7 +59,7 @@ public class BinarySearchTree extends AbstractTree {
         return node;
     }
 
-    private Node delete(Node delNode) {
+    protected Node delete(Node delNode) {
         if (delNode == null) return null;
         Node result = null;
         if (delNode.left == null) {
@@ -84,7 +87,7 @@ public class BinarySearchTree extends AbstractTree {
         return result;
     }
 
-    private Node getMiniNode(Node node) {
+    protected Node getMiniNode(Node node) {
         while (node.left != null) {
             node = node.left;
         }
@@ -97,7 +100,7 @@ public class BinarySearchTree extends AbstractTree {
      * @param delNode 删除节点
      * @param addNode 替换节点
      */
-    private Node transplant(Node delNode, Node addNode) {
+    protected Node transplant(Node delNode, Node addNode) {
         if (delNode.parent == null) {
             this.root = addNode;
         }
@@ -116,6 +119,14 @@ public class BinarySearchTree extends AbstractTree {
 
     @Override
     public String toString() {
+        String str = elementList.toString();
+        str = str.substring(str.indexOf("[") + 1, str.lastIndexOf("]")).replace(" ", "");
+        int nullIdx = str.indexOf("null");
+        if (nullIdx > 0) {
+            str = str.substring(0, str.indexOf("null"));
+            str = str.substring(0, str.lastIndexOf(","));
+        }
+        System.out.println("输入节点：" + str + "\r\n");
         return printSubTree(root);
     }
 

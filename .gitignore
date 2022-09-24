@@ -26,3 +26,4 @@ hs_err_pid*
 /doc/.*.bkp
 /doc/.*.dtmp
 
+/data-structures/src/main/java/tree/draw/.$tree.drawio_1.dtmp

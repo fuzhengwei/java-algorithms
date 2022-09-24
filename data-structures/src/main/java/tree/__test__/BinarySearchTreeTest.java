@@ -12,6 +12,18 @@ public class BinarySearchTreeTest {
     private final Logger logger = LoggerFactory.getLogger(BinarySearchTreeTest.class);
 
     @Test
+    public void test_bst() {
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.insert(1);
+        tree.insert(2);
+        tree.insert(3);
+        tree.insert(4);
+        tree.insert(6);
+        tree.insert(7);
+        System.out.println(tree);
+    }
+
+    @Test
     public void test_binary_search_tree() {
         BinarySearchTree tree = new BinarySearchTree();
         for (int i = 0; i < 10; i++) {
@@ -21,7 +33,7 @@ public class BinarySearchTreeTest {
     }
 
     @Test
-    public void test_insert_delete(){
+    public void test_insert_delete() {
         BinarySearchTree tree = new BinarySearchTree();
         tree.insert(32);
         tree.insert(7);
@@ -41,6 +53,18 @@ public class BinarySearchTreeTest {
 
         // 删除双节点，拥有二个孩子的父节点
         tree.delete(64);
+        System.out.println(tree);
+    }
+
+    @Test
+    public void test_link() {
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.insert(7);
+        tree.insert(8);
+        tree.insert(2);
+        tree.insert(5);
+        tree.insert(1);
+
         System.out.println(tree);
     }
 
