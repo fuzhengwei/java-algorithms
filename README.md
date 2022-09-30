@@ -20,6 +20,7 @@
 - [ ] 树
   - [x] [`A` 二叉查找树](https://bugstack.cn/md/algorithm/data-structures/2022-09-18-tree.html)
   - [x] [`A` AVL 树](https://bugstack.cn/md/algorithm/data-structures/2022-09-26-tree-avl.html)
+  - [ ] `A` 2-3树
   - [ ] `A` 红黑树
   - [ ] `A` 线段树 - 使用 最小/最大/总和 范围查询示例
   - [ ] `A` 树状数组 (二叉索引树)
