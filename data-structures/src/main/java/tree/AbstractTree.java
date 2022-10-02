@@ -9,22 +9,24 @@ public abstract class AbstractTree {
 
     public Node root;
 
+    protected static final Node nilNode = new Node(RedBlackTree.class, null, null, null, null, Node.Color.BLACK);
+
     /**
      * 以新插入节点6，节点4不平衡，需要左旋为案例
-     *                  /----- 6
-     *          /----- 5
-     *  /----- 4
+     * /----- 6
+     * /----- 5
+     * /----- 4
      * 2
-     *  \----- 1
-     *
+     * \----- 1
+     * <p>
      * 左旋操作
-     *
-     *          /----- 6
-     *  /----- 5
-     *  |       \----- 4
+     * <p>
+     * /----- 6
+     * /----- 5
+     * |       \----- 4
      * 2
-     *  \----- 1
-     *
+     * \----- 1
+     * <p>
      * 步骤；
      * 1. 左旋的作用，相当于通过向上迁移树高差大于1的右子节点来降低树高的操作。
      * 2. 通过节点4拿到父节点2和右子节点5，把父节点2和右子节点5建立关联
@@ -38,14 +40,14 @@ public abstract class AbstractTree {
         temp.parent = node.parent;
 
         node.right = temp.left;
-        if (node.right != null) {
+        if (node.right != null && node.right != nilNode) {
             node.right.parent = node;
         }
 
         temp.left = node;
         node.parent = temp;
 
-        if (temp.parent == null) {
+        if (temp.parent == null || temp.parent == nilNode) {
             root = temp;
         } else {
             if (temp.parent.left == node) {
@@ -59,21 +61,21 @@ public abstract class AbstractTree {
 
     /**
      * 以新插入节点1，节点3不平衡，需要右旋为案例
-     *
-     *  /----- 5
+     * <p>
+     * /----- 5
      * 4
-     *  \----- 3
-     *          \----- 2
-     *                  \----- 1
-     *
+     * \----- 3
+     * \----- 2
+     * \----- 1
+     * <p>
      * 右旋操作
-     *
-     *  /----- 5
+     * <p>
+     * /----- 5
      * 4
-     *  |       /----- 3
-     *  \----- 2
-     *          \----- 1
-     *
+     * |       /----- 3
+     * \----- 2
+     * \----- 1
+     * <p>
      * 步骤；
      * 1. 右旋的作用，相当于通过向上迁移树高差大于1的右子节点来降低树高的操作。
      * 2. 通过节点3拿到父节点4和左子节点2，把父节点7和左子节点2建立关联
@@ -87,14 +89,15 @@ public abstract class AbstractTree {
         temp.parent = node.parent;
 
         node.left = temp.right;
-        if (node.left != null) {
+        // 红黑树有空节点 nilNode
+        if (node.left != null && node.left != nilNode) {
             node.left.parent = node;
         }
 
         temp.right = node;
         node.parent = temp;
 
-        if (temp.parent == null) {
+        if (temp.parent == null || temp.parent == nilNode) {
             root = temp;
         } else {
             if (temp.parent.left == node) {
@@ -137,11 +140,13 @@ public abstract class AbstractTree {
 
     private void printNodeValue(Node node, StringBuilder tree) {
         if (null == node.value) {
-            tree.append("<null>");
+            tree.append("<NIL>");
         } else {
             tree.append(node.value);
-            if(root.clazz.equals(AVLTree.class)){
+            if (root.clazz.equals(AVLTree.class)) {
                 tree.append("(").append(node.height).append(")");
+            } else if (root.clazz.equals(RedBlackTree.class)) {
+                tree.append("(").append(node.color == Node.Color.BLACK ? "黑" : "红").append(")");
             }
         }
         tree.append("\r\n");

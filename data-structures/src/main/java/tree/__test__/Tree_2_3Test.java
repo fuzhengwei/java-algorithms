@@ -12,7 +12,7 @@ public class Tree_2_3Test {
     @Test
     public void test_insert_incr() {
         Tree_2_3 tree = new Tree_2_3();
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 8; i++) {
             tree.insert(i);
             System.out.println(tree);
         }

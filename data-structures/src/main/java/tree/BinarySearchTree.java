@@ -1,5 +1,11 @@
 package tree;
 
+/**
+ * @author 小傅哥，微信：fustack
+ * @description 二分查找树
+ * @github https://github.com/fuzhengwei
+ * @Copyright 公众号：bugstack虫洞栈 | 博客：https://bugstack.cn - 沉淀、分享、成长，让自己和他人都能有所收获！
+ */
 public class BinarySearchTree extends AbstractTree {
 
     protected int size;
@@ -126,7 +132,7 @@ public class BinarySearchTree extends AbstractTree {
             str = str.substring(0, str.indexOf("null"));
             str = str.substring(0, str.lastIndexOf(","));
         }
-        System.out.println("输入节点：" + str + "\r\n");
+        System.out.println(this.getClass().getSimpleName() + "，输入节点：" + str + "\r\n");
         return printSubTree(root);
     }
 

@@ -7,15 +7,23 @@ public class Node {
     public Node parent;
     public Node left;
     public Node right;
+
     // AVL 树所需属性
     public int height;
+    // 红黑树所需属性
+    public Color color = Color.RED;
 
-    public Node(Class<?> clazz ,Integer value, Node parent, Node left, Node right) {
+    public Node(Class<?> clazz, Integer value, Node parent, Node left, Node right) {
         this.clazz = clazz;
         this.value = value;
         this.parent = parent;
         this.left = left;
         this.right = right;
+    }
+
+    public Node(Class<?> clazz, Integer value, Node parent, Node left, Node right, Color color) {
+        this(clazz, value, parent, left, right);
+        this.color = color;
     }
 
     @Override
@@ -37,6 +45,11 @@ public class Node {
         } else {
             return node.value.equals(value);
         }
+    }
+
+    // 红黑树枚举
+    enum Color {
+        RED, BLACK
     }
 
 }
