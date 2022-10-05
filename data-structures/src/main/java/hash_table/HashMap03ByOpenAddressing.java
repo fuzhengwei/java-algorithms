@@ -32,8 +32,8 @@ public class HashMap03ByOpenAddressing<K, V> implements Map<K, V> {
     public V get(K key) {
         int idx = key.hashCode() & (tab.length - 1);
         for (int i = idx; i < tab.length; i ++){
-            if (tab[idx] != null && tab[idx].key == key) {
-                return tab[idx].value;
+            if (tab[i] != null && tab[i].key == key) {
+                return tab[i].value;
             }
         }
         return null;
