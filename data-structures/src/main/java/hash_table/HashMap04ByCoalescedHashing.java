@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Objects;
+
 /**
  * 合并散列（Coalesced hashing）是单独链接和开放寻址的混合，其中桶或节点在表中链接。该算法非常适合固定内存分配。通过识别哈希表上索引最大的空槽来解决合并哈希中的冲突，然后将冲突值插入该槽中。桶还链接到插入节点的插槽，其中包含其冲突哈希地址。
  */
@@ -21,6 +23,11 @@ public class HashMap04ByCoalescedHashing<K, V> implements Map<K, V> {
             return;
         }
 
+        if (Objects.equals(tab[idx].key, key)) {
+            tab[idx] = new Node<>(key, value);
+            return;
+        }
+
         int cursor = tab.length - 1;
         while (tab[cursor] != null && tab[cursor].key != key) {
             --cursor;
@@ -28,7 +35,7 @@ public class HashMap04ByCoalescedHashing<K, V> implements Map<K, V> {
         tab[cursor] = new Node<>(key, value);
 
         // 将碰撞节点指向这个新节点
-        while (tab[idx].idxOfNext != 0){
+        while (tab[idx].idxOfNext != 0) {
             idx = tab[idx].idxOfNext;
         }
 
