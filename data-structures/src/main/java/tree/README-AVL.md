@@ -1,4 +1,10 @@
-# AVL 树
+# 平衡二叉树 AVL Tree
+
+作者：小傅哥
+<br/>博客：[https://bugstack.cn](https://bugstack.cn)
+<br/>原文：[https://bugstack.cn/md/algorithm/data-structures/2022-09-26-tree-avl.html](https://bugstack.cn/md/algorithm/data-structures/2022-09-26-tree-avl.html) —— Github 图片加载较慢，可以阅读原文
+
+> 沉淀、分享、成长，让自己和他人都能有所收获！😄
 
 ## 一、前言
 
@@ -10,7 +16,9 @@
 
 AVL 自平衡二叉树的出现，其目的在于解决二叉搜索树退化成链表的问题。当我们向BST二叉搜索树顺序存入`1、2、3、4、5、6、7`个元素时，它会退化成一条链表，因而失去树查询的时间复杂度，所以我们需要AVL树平衡树高。如图所示
 
-![](/Users/fuzhengwei1/Documents/develop/github/java-algorithms/data-structures/src/main/java/tree/images/tree-avl-01.png)
+<div align="center">
+    <img src="https://bugstack.cn/images/article/algorithm/tree-avl-01.png?raw=true" width="500px">
+</div>
 
 那么AVL树是怎么平衡树高的呢？
 
@@ -18,11 +26,14 @@ AVL 自平衡二叉树的出现，其目的在于解决二叉搜索树退化成�
 
 | 左旋（新增节点6）                                            | 右旋（新增节点1）                                            | 左旋+右旋（新增节点4）                                       | 右旋+左旋（新增节点3）                                       |
 | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| ![](/Users/fuzhengwei1/Documents/develop/github/java-algorithms/data-structures/src/main/java/tree/images/tree-avl-02.png) | ![](/Users/fuzhengwei1/Documents/develop/github/java-algorithms/data-structures/src/main/java/tree/images/tree-avl-03.png) | ![](/Users/fuzhengwei1/Documents/develop/github/java-algorithms/data-structures/src/main/java/tree/images/tree-avl-04.png) | ![](/Users/fuzhengwei1/Documents/develop/github/java-algorithms/data-structures/src/main/java/tree/images/tree-avl-05.png) |
+| ![](https://bugstack.cn/images/article/algorithm/tree-avl-02.png) | ![](https://bugstack.cn/images/article/algorithm/tree-avl-03.png) | ![](https://bugstack.cn/images/article/algorithm/tree-avl-04.png) | ![](https://bugstack.cn/images/article/algorithm/tree-avl-05.png) |
 | **条件**：节点4，平衡因子为-2，左旋                          | **条件**：节点3，平衡因子为2，右旋                           | **条件**：节点3，平衡因子为2，右旋。但当节点2平衡因子-1先左旋。 | **条件**：节点2，平衡因子为-2，左旋。但当节点5平衡因子1先右旋。 |
 
 - 节点树高：以节点4为说明，最长的左右分支节点个数，就是节点4的最大树高。这里节点4左右孩子节点最长路径都为2，所以它的树高为2。同理可计算其他节点树高。
 - 平衡因子：通过当前节点的左右子节点作差计算平衡因子，之后AVL树通过平衡因子，定义了什么时候进行左旋和右旋。
+
+- 源码地址：[https://github.com/fuzhengwei/java-algorithms](https://github.com/fuzhengwei/java-algorithms)
+- 本章源码：[https://github.com/fuzhengwei/java-algorithms/tree/main/data-structures/src/main/java/tree](https://github.com/fuzhengwei/java-algorithms/tree/main/data-structures/src/main/java/tree)
 
 ## 三、AVL树代码实现
 
@@ -52,7 +63,9 @@ public class Node {
 
 图解左旋操作；它就是一种摘链更换调整节点的处理过程，小傅哥把它分解展示，整个过程如下；
 
-![](/Users/fuzhengwei1/Documents/develop/github/java-algorithms/data-structures/src/main/java/tree/images/tree-avl-06.png)
+<div align="center">
+    <img src="https://bugstack.cn/images/article/algorithm/tree-avl-06.png?raw=true" width="500px">
+</div>
 
 **代码实现**
 
@@ -93,7 +106,9 @@ protected Node rotateLeft(Node node) {
 
 图解右旋操作；它就是一种摘链更换调整节点的处理过程，小傅哥把它分解展示，整个过程如下；
 
-![](/Users/fuzhengwei1/Documents/develop/github/java-algorithms/data-structures/src/main/java/tree/images/tree-avl-07.png)
+<div align="center">
+    <img src="https://bugstack.cn/images/article/algorithm/tree-avl-07.png?raw=true" width="500px">
+</div>
 
 **代码实现**
 
@@ -131,7 +146,9 @@ protected Node rotateRight(Node node) {
 
 之所以会有左旋 + 右旋，是因为一次右旋操作没法平衡树高，而这种树的不平衡节点的左子节点的右子节点过长，所以要把不平衡节点的左子节点向左旋转一次，之后再进行右旋操作。
 
-![](/Users/fuzhengwei1/Documents/develop/github/java-algorithms/data-structures/src/main/java/tree/images/tree-avl-08.png)
+<div align="center">
+    <img src="https://bugstack.cn/images/article/algorithm/tree-avl-08.png?raw=true" width="800px">
+</div>
 
 **代码实现**
 
@@ -156,7 +173,9 @@ if (factor(node.left) >= 0) {
 
 之所以会有右旋 + 左旋，是因为一次左旋操作没法平衡树高，而这种树的不平衡节点的右子节点的左子节点过长，所以要把不平衡节点的右子节点向右旋转一次，之后再进行左旋操作。
 
-![](/Users/fuzhengwei1/Documents/develop/github/java-algorithms/data-structures/src/main/java/tree/images/tree-avl-09.png)
+<div align="center">
+    <img src="https://bugstack.cn/images/article/algorithm/tree-avl-09.png?raw=true" width="800px">
+</div>
 
 **代码实现**
 

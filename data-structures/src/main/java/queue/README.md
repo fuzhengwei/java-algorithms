@@ -1,8 +1,8 @@
-# 《Java 数据结构和算法》第3章：队列&二叉堆
+# 队列 Queue
 
 作者：小傅哥
 <br/>博客：[https://bugstack.cn](https://bugstack.cn)
-<br/>原文：[https://mp.weixin.qq.com/s/fpXGTjHeaYKULt3kqm1NTw](https://mp.weixin.qq.com/s/fpXGTjHeaYKULt3kqm1NTw)
+<br/>原文：[https://bugstack.cn/md/algorithm/data-structures/2022-08-06-queue.html](https://bugstack.cn/md/algorithm/data-structures/2022-08-06-queue.html) —— Github 图片加载较慢，可以阅读原文
 
 > 沉淀、分享、成长，让自己和他人都能有所收获！😄
 
@@ -18,7 +18,9 @@
 
 在计算机科学中, 一个 **队列(queue)** 是一种特殊类型的抽象数据类型或集合。集合中的实体按顺序保存。
 
-![](https://bugstack.cn/images/article/algorithm/algorithms-220806-01.png)
+<div align="center">
+    <img src="https://bugstack.cn/images/article/algorithm/algorithms-220806-01.png?raw=true" width="600px">
+</div>
 
 - 从理论上讲，队列的一个特征是它没有特定的容量。不管已经包含多少元素，总是可以再添加一个新元素。
 - 队列既可以是数组实现也可以是链表实现。所以当我们在 Java 中使用队列的时候，Deque 的实现类就是；LinkedList 和 ArrayDeque的实现类。
@@ -31,13 +33,15 @@
 本章节我们就借着数组结构的学习，实现一个延迟队列的 DelayQueue，让使用 Java 的读者既能了解学习数据结构，也能了解到 Java 源码实现。
 
 - 源码地址：[https://github.com/fuzhengwei/java-algorithms](https://github.com/fuzhengwei/java-algorithms) - `Java 算法与数据结构`
-- 本章源码：[https://github.com/fuzhengwei/java-algorithms/blob/main/data-structures/src/main/java/cn/bugstack/algorithms/data/queue/DelayQueue.java](https://github.com/fuzhengwei/java-algorithms/blob/main/data-structures/src/main/java/cn/bugstack/algorithms/data/queue/DelayQueue.java)
+- 本章源码：[https://github.com/fuzhengwei/java-algorithms/tree/main/data-structures/src/main/java/queue](https://github.com/fuzhengwei/java-algorithms/tree/main/data-structures/src/main/java/queue)
 
 ### 1. 延迟队列说明
 
 DelayQueue 是一个 BlockingQueue（无界阻塞）队列，它封装了一个使用完全二叉堆排序元素的 PriorityQueue（优先队列）。在添加元素时使用 Delay（延迟时间）作为排序条件，延迟最小的元素会优先放到队首。
 
-![](https://bugstack.cn/images/article/algorithm/algorithms-220806-02.png)
+<div align="center">
+    <img src="https://bugstack.cn/images/article/algorithm/algorithms-220806-02.png?raw=true" width="600px">
+</div>
 
 - 延迟队列的第一个核心点在于对所加入的元素按照一定的规则进行排序存放，这样才能让在延迟弹出元素的时候，按照所存放元素的排序进行输出。
 - 那么这个延迟队列中用到的排序方式就是 PriorityQueue 优先队列，它的数据结构是数组实现的队列，但体现形式是一棵二叉堆树结构。在元素存放时，通过对存放元素的比较和替换形成二叉堆结构。
@@ -46,7 +50,9 @@ DelayQueue 是一个 BlockingQueue（无界阻塞）队列，它封装了一个�
 
 二叉堆是一种特殊结构的堆，它的表现形态可以是一棵完整或近似二叉树的结构。如我们本章节要实现的延迟队列中的元素存放，使用的就是 PriorityQueue 实现的平衡二叉堆结构，数据以队列形式存放在基础数组中。
 
-![](https://bugstack.cn/images/article/algorithm/algorithms-220806-03.png)
+<div align="center">
+    <img src="https://bugstack.cn/images/article/algorithm/algorithms-220806-03.png?raw=true" width="600px">
+</div>
 
 - **父子节点索引关系**：
 	- 假如父节点为queue[n]，那么左子节点为queue[2n+1]，右子节点为queue[2n+2]
@@ -65,7 +71,9 @@ DelayQueue 是一个 BlockingQueue（无界阻塞）队列，它封装了一个�
 
 延迟队列的实现，主要为在优先队列的基础上，添加可重入锁 ReentrantLock 对阻塞队列的实现。当数据存放时，按照二叉堆结构排序元素，出队时依照排序结构进行迁移。
 
-![](https://bugstack.cn/images/article/algorithm/algorithms-220806-04.png)
+<div align="center">
+    <img src="https://bugstack.cn/images/article/algorithm/algorithms-220806-04.png?raw=true" width="600px">
+</div>
 
 - 延迟队列的使用，是以在 DelayQueue 中存放实现了 Delayed 延迟接口的对象。因为只有实现这个对象，才能比较出当前元素与所需存放到对应位置的一个比对计算过程。
 - 另外这里的核心点包括：PriorityQueue —— 优先队列、ReentrantLock —— 可重入锁、Condition —— 信号量
@@ -99,8 +107,14 @@ private void siftUpComparable(int k, E x) {
 
 - DelayQueue 延迟队列，元素入队最终会调用到优先队列的 PriorityQueue#siftUpComparable 方法。
 - 以入队元素2举例，如图所示入队过程。
+-  `(k - 1) >>> 1` 为什么使用 `>>>` 右移1位；
+    - 首先我们是需要通过右移替代除以2的运算，提升运算效率，找到父节点。*移位器比除法器简单得多，在大多数处理器上，移位指令的执行速度比除法指令快*
+    - `>>` 是算术位移，`>>>` 是逻辑右移
+    - 算术和逻辑左移和乘法的等价，但由于符号位的存在算术右移和除法不等价。wiki：[算术移位](https://en.wikipedia.org/wiki/Arithmetic_shift)、[逻辑移位](https://en.wikipedia.org/wiki/Logical_shift)
 
-![元素入队过程](https://bugstack.cn/images/article/algorithm/algorithms-220806-05.png)
+<div align="center">
+    <img src="https://bugstack.cn/images/article/algorithm/algorithms-220806-05.png?raw=true" width="700px">
+</div>
 
 1. 首先将元素2挂到队列尾部，之后通过 (k - 1) >>> 1 计算父节点位置，与对应元素进行比对和判断交换。
 2. 交换过程包括2->6、2->5，以此交换结束后元素保存完毕。
@@ -177,7 +191,9 @@ private void siftDownComparable(int k, E x) {
 
 - DelayQueue 延迟队列，元素出队会调用到 PriorityQueue#siftDownComparable 方法，不断地向下迁移元素。这个过程会比对左右子节点的值，找到最小的。所以整个过程会比入队麻烦一些。
 
-![元素出队过程](https://bugstack.cn/images/article/algorithm/algorithms-220806-06.png)
+<div align="center">
+    <img src="https://bugstack.cn/images/article/algorithm/algorithms-220806-06.png?raw=true" width="700px">
+</div>
 
 这里以弹出元素1举例，之后将队尾元素替换到相应的位置。整个过程分为6张图表述。
 

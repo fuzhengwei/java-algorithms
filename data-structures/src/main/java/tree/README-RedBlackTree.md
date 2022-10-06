@@ -1,4 +1,10 @@
-# 红黑树
+# 红黑树 Red Back Tree
+
+作者：小傅哥
+<br/>博客：[https://bugstack.cn](https://bugstack.cn)
+<br/>原文：[https://bugstack.cn/md/algorithm/data-structures/2022-10-02-tree-red-black.html](https://bugstack.cn/md/algorithm/data-structures/2022-10-02-tree-red-black.html) —— Github 图片加载较慢，可以阅读原文
+
+> 沉淀、分享、成长，让自己和他人都能有所收获！😄
 
 ## 一、前言
 
@@ -18,7 +24,7 @@
 
 |                            红黑树                            |                            红黑树                            |                            2-3树                             |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| ![](/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/tree/images/tree-rbt-01.png) | ![](/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/tree/images/tree-rbt-02.png) | ![](/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/tree/images/tree-rbt-03.png) |
+| ![](https://bugstack.cn/images/article/algorithm/tree-rbt-01.png) | ![](https://bugstack.cn/images/article/algorithm/tree-rbt-02.png) | ![](https://bugstack.cn/images/article/algorithm/tree-rbt-03.png) |
 |                      一棵标准二叉红黑树                      |                  红黑树演化（红色节点拉平）                  |                       最终恢复到2-3树                        |
 
 红黑树一棵在2-3树基础上的左倾红黑树，这样就可以把红色节点与对应的父节点拉平，再把两个拉平的节点放到一个节点中。就是我们熟悉的2-3树了。*如果你还没有学习过2-3树，最好先看下小傅哥的[2-3树](#)，否则你会看的很吃力*
@@ -61,7 +67,7 @@ public class Node {
 相比于AVL树通过左右旋转平衡树高，红黑树则是在2-3树的基础上，只对黑色节点维护树高，所以它会使用到染色和左右旋来对树高调衡。*染色与左右旋相比，减少了平衡操作*
 
 - 源码地址：[https://github.com/fuzhengwei/java-algorithms](https://github.com/fuzhengwei/java-algorithms)
-- 本章源码：[https://github.com/fuzhengwei/java-algorithms/tree/main/data-structures/src/main/java/stack](https://github.com/fuzhengwei/java-algorithms/tree/main/data-structures/src/main/java/tree)
+- 本章源码：[https://github.com/fuzhengwei/java-algorithms/tree/main/data-structures/src/main/java/tree](https://github.com/fuzhengwei/java-algorithms/tree/main/data-structures/src/main/java/tree)
 - 动画演示：[https://www.cs.usfca.edu/~galles/visualization/RedBlack.html](https://www.cs.usfca.edu/~galles/visualization/RedBlack.html)—— 红黑树初次理解还是比较困难的，可以结合学习内容的同时做一些动画演示。
 
 ### 1. 左倾染色
@@ -69,7 +75,7 @@ public class Node {
 新增节点1，相当于2-3树中在节点2上添加了一个节点，这个时候并不影响树高，只需要染色保持红黑树的规则即可。染色过程如图所示。
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/tree/images/tree-rbt-04.png?raw=true" width="650px">
+    <img src="https://bugstack.cn/images/article/algorithm/tree-rbt-04.png?raw=true" width="750px">
 </div>
 
 ```java
@@ -91,7 +97,7 @@ if (uncle.color == Node.Color.RED){
 新增节点4，相当于2-3树中在节点3上添加了一个节点，这个时候并不影响树高，只需要染色保持红黑树的规则即可。染色过程如图所示。
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/tree/images/tree-rbt-05.png?raw=true" width="650px">
+    <img src="https://bugstack.cn/images/article/algorithm/tree-rbt-05.png?raw=true" width="750px">
 </div>
 
 ```java
@@ -115,7 +121,7 @@ if(uncle.color == Node.Color.RED){
 对照2-3树，只有当一个节点内有3个节点的时候，才需要调衡。那么红黑树则是判断当前节点的叔叔节点是否为红色节点，如果不是则没法通过染色调衡，也就是需要选择进行调衡。
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/tree/images/tree-rbt-06.png?raw=true" width="650px">
+    <img src="https://bugstack.cn/images/article/algorithm/tree-rbt-06.png?raw=true" width="750px">
 </div>
 
 ```java
@@ -133,7 +139,7 @@ super.rotateLeft(grandParent);
 当一次左旋没法调衡，需要右旋+左旋的情况，在AVL树中有同样的场景。本身树需要左旋操作，但整体分支树节点偏左，此时需要右旋调整树结构再左旋。*此处可参考小傅哥编写的[AVL树](https://bugstack.cn/md/algorithm/data-structures/2022-09-26-tree-avl.html#_3-%E5%B7%A6%E6%97%8B-%E5%8F%B3%E6%97%8B)*
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/tree/images/tree-rbt-07.png?raw=true" width="650px">
+    <img src="https://bugstack.cn/images/article/algorithm/tree-rbt-07.png?raw=true" width="750px">
 </div>
 
 ```java
@@ -157,7 +163,7 @@ super.rotateLeft(grandParent);
 对照2-3树，只有当一个节点内有3个节点的时候，才需要调衡。那么红黑树则是判断当前节点的叔叔节点是否为红色节点，如果不是则没法通过染色调衡，也就是需要选择进行调衡。
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/tree/images/tree-rbt-08.png?raw=true" width="650px">
+    <img src="https://bugstack.cn/images/article/algorithm/tree-rbt-08.png?raw=true" width="750px">
 </div>
 
 ```java
@@ -175,7 +181,7 @@ super.rotateRight(grandParent);
 当一次左旋没法调衡，需要左旋+右旋的情况，在AVL树中有同样的场景。本身树需要右旋操作，但整体分支树节点偏右，此时需要左旋调整树结构再右旋。
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/tree/images/tree-rbt-09.png?raw=true" width="650px">
+    <img src="https://bugstack.cn/images/article/algorithm/tree-rbt-09.png?raw=true" width="650px">
 </div>
 
 ```java
@@ -283,3 +289,4 @@ RedBlackTree，输入节点：79,92,36,35,72,22,11,66,98,28,30,39,56,26,1,25,33,
 - B-树是什么意思，都包括哪些？
 - 新增加一个节点后，什么情况下需要染色、什么情况要左旋、什么情况要左旋+右旋？
 - 红黑树的特点是什么？
+

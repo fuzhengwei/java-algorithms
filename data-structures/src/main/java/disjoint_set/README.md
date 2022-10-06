@@ -1,5 +1,11 @@
 # 并查集 Disjoint-Set
 
+作者：小傅哥
+<br/>博客：[https://bugstack.cn](https://bugstack.cn)
+<br/>原文：[https://bugstack.cn/md/algorithm/data-structures/2022-10-04-disjoint-set.html](https://bugstack.cn/md/algorithm/data-structures/2022-10-04-disjoint-set.html) —— Github 图片加载较慢，可以阅读原文
+
+> 沉淀、分享、成长，让自己和他人都能有所收获！😄
+
 ## 一、前言
 
 `并查集的历史`
@@ -17,7 +23,7 @@
 并查集的定义乍一看有些抽象，也不知道到底在什么场景使用。所以小傅哥给大家举个例子；在以前江湖上有很多门派，各门派见的徒子徒孙碰面难免切磋。为了不让大家打乱套，都要喊一句：”报上名来“ —— 在下叶问，佛山咏春派，师承陈华顺。那么对于这样的场景，我们可以使用并查集给各门派成员合并，方便汇总查询。如图；
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/disjoint_set/images/disjoint-set-01.png?raw=true" width="550px">
+    <img src="https://bugstack.cn/images/article/algorithm/disjoint-set-01.png?raw=true" width="550px">
 </div>
 
 - 张无忌：既然你不是明教，也不是武当的，我就不客气了。
@@ -27,11 +33,11 @@
 
 ---
 
-🤔 但各门派兔子吐逊众多，如果下回遇到赵敏的A丫鬟的Aa丫鬟，没等Aa报家门找族谱完事，也被抠脚了咋办？所以基于这样的情况，要对并查集的各级元素进行优化合并，减少排查路径。
+🤔 但各门派徒子徒孙众多，如果下回遇到赵敏的A丫鬟的Aa丫鬟，没等Aa报家门找族谱完事，也被抠脚了咋办？所以基于这样的情况，要对并查集的各级元素进行优化合并，减少排查路径。
 
 |                         01：粗暴合并                         |                         02：数量合并                         |                         03：排序合并                         |                         04：压缩路径                         |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| ![](/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/disjoint_set/images/disjoint-set-02.png) | ![](/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/disjoint_set/images/disjoint-set-03.png) | ![](/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/disjoint_set/images/disjoint-set-04.png) | ![](/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/disjoint_set/images/disjoint-set-05.png) |
+| ![](https://bugstack.cn/images/article/algorithm/disjoint-set-02.png) | ![](https://bugstack.cn/images/article/algorithm/disjoint-set-03.png) | ![](https://bugstack.cn/images/article/algorithm/disjoint-set-04.png) | ![](https://bugstack.cn/images/article/algorithm/disjoint-set-05.png) |
 |                     0→6、6→0 不控制合并                      |                      数量少合并到数量多                      |                      排序小合并到排序大                      |                      排序合并时压缩路径                      |
 
 为了尽可能少的检索次数到根元素，在01：粗暴合并的基础上，有了基于数量、排序的合并方式，同时还包括可以压缩路径。这样再索引到根节点的时间复杂度就又降低了。接下来小傅哥就带着大家看看各个场景的在代码中的操作过程。
@@ -45,9 +51,9 @@ public class DisjointSet {
 	  // 元素
     public int[] items;
     // 数量【可选】
-		public int[] count;
-		// 排序【可选】
-		public int[] rank;
+	public int[] count;
+	// 排序【可选】
+	public int[] rank;
 }
 ```
 
@@ -60,7 +66,7 @@ public class DisjointSet {
 ### 1. 默认合并 - union(1, 8)
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/disjoint_set/images/disjoint-set-06.png?raw=true" width="500px">
+    <img src="https://bugstack.cn/images/article/algorithm/disjoint-set-06.png?raw=true" width="500px">
 </div>
 
 ```java
@@ -92,7 +98,7 @@ public void union(int parent, int child) {
 ### 2. 粗暴合并 - union(1, 8)
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/disjoint_set/images/disjoint-set-07.png?raw=true" width="500px">
+    <img src="https://bugstack.cn/images/article/algorithm/disjoint-set-07.png?raw=true" width="500px">
 </div>
 
 ```java
@@ -127,7 +133,7 @@ public void union(int parent, int child) {
 ### 3. 数量合并 - union(1, 8)
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/disjoint_set/images/disjoint-set-08.png?raw=true" width="500px">
+    <img src="https://bugstack.cn/images/article/algorithm/disjoint-set-08.png?raw=true" width="500px">
 </div>
 
 ```java
@@ -166,7 +172,7 @@ public void union(int parent, int child) {
 ### 4. 排序合并 - union(8, 1)
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/disjoint_set/images/disjoint-set-09.png?raw=true" width="500px">
+    <img src="https://bugstack.cn/images/article/algorithm/disjoint-set-09.png?raw=true" width="500px">
 </div>
 
 ```java
@@ -208,7 +214,7 @@ public void union(int parent, int child) {
 ### 5. 压缩路径 - union(8, 1)
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/disjoint_set/images/disjoint-set-10.png?raw=true" width="500px">
+    <img src="https://bugstack.cn/images/article/algorithm/disjoint-set-10.png?raw=true" width="500px">
 </div>
 
 ```java
@@ -276,7 +282,7 @@ public void test_04() {
 **测试结果**
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/disjoint_set/images/disjoint-set-11.png?raw=true" width="500px">
+    <img src="https://bugstack.cn/images/article/algorithm/disjoint-set-11.png?raw=true" width="500px">
 </div>
 
 ```java

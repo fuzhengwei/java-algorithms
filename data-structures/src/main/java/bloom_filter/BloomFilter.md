@@ -1,5 +1,11 @@
 # 布隆过滤器 Bloom Filter
 
+作者：小傅哥
+<br/>博客：[https://bugstack.cn](https://bugstack.cn)
+<br/>原文：[https://bugstack.cn/md/algorithm/data-structures/2022-10-05-bloom-filter.html](https://bugstack.cn/md/algorithm/data-structures/2022-10-05-bloom-filter.html) —— Github 图片加载较慢，可以阅读原文
+
+> 沉淀、分享、成长，让自己和他人都能有所收获！😄
+
 ## 一、前言
 
 `布隆过滤器的历史`
@@ -11,7 +17,7 @@
 布隆过滤器是一个基于数组和哈希函数散列元素的结构，很像HashMap的哈希桶。布隆过滤器可以用于检测一个元素是否在集合中。它的优点是空间效率和查询时间比一般算法要好很多，但也有一定概率的误判性。*如HashMap出现哈希碰撞💥*
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/data-structures/src/main/java/bloom_filter/images/bloom-filter-01.png?raw=true" width="600px">
+    <img src="https://bugstack.cn/images/article/algorithm/bloom-filter-01.png?raw=true" width="600px">
 </div>
 
 - 赵敏：无忌，成昆上了光明顶！

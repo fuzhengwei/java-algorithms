@@ -1,7 +1,8 @@
-# 《Java 数据结构和算法》第7章：字典树
+# 字典树 Trie
 
 作者：小傅哥
 <br/>博客：[https://bugstack.cn](https://bugstack.cn)
+<br/>原文：[https://bugstack.cn/md/algorithm/data-structures/2022-09-14-trie.html](https://bugstack.cn/md/algorithm/data-structures/2022-09-14-trie.html) —— Github 图片加载较慢，可以阅读原文
 
 > 沉淀、分享、成长，让自己和他人都能有所收获！😄
 
@@ -17,7 +18,9 @@
 
 与二叉查找树不同，键不是直接保存在节点中，而是由节点在树中的位置决定。一个节点的所有子孙都有相同的前缀，也就是这个节点对应的字符串，而根节点对应空字符串。一般情况下，不是所有的节点都有对应的值，只有叶子节点和部分内部节点所对应的键才有相关的值。
 
-![](https://bugstack.cn/images/article/algorithm/trie-01.png)
+<div align="center">
+    <img src="https://bugstack.cn/images/article/algorithm/trie-01.png?raw=true" width="500px">
+</div>
 
 - 这是一个把 battle 单词字符串，按照字母拆分到字典树进行存放的图。
 - 键标注在节点中，值标注在节点之下。每一个完整的英文单词对应一个特定的整数。也就是26个字母对应的 ASCII 转换后的值。
@@ -28,7 +31,7 @@
 
 接下来我们就基于 Java 语言实现一个字典树的存放和遍历索引的功能。
 - 源码地址：[https://github.com/fuzhengwei/java-algorithms](https://github.com/fuzhengwei/java-algorithms)
-- 本章源码：[https://github.com/fuzhengwei/java-algorithms/tree/main/data-structures/src/main/java/stack](https://github.com/fuzhengwei/java-algorithms/tree/main/data-structures/src/main/java/stack)
+- 本章源码：[https://github.com/fuzhengwei/java-algorithms/tree/main/data-structures/src/main/java/trie](https://github.com/fuzhengwei/java-algorithms/tree/main/data-structures/src/main/java/trie)
 
 ### 1. 树枝节点
 
@@ -60,7 +63,9 @@ public class TrieNode {
 
 ### 2. 插入元素
 
-![](https://bugstack.cn/images/article/algorithm/trie-02.png)
+<div align="center">
+    <img src="https://bugstack.cn/images/article/algorithm/trie-02.png?raw=true" width="600px">
+</div>
 
 ```java
 public void insert(String words, String explain) {
@@ -84,7 +89,9 @@ public void insert(String words, String explain) {
 
 ### 3. 索引元素
 
-![](https://bugstack.cn/images/article/algorithm/trie-03.png)
+<div align="center">
+    <img src="https://bugstack.cn/images/article/algorithm/trie-03.png?raw=true" width="600px">
+</div>
 
 ```java
 public List<String> searchPrefix(String prefix) {

@@ -2,6 +2,7 @@
 
 作者：小傅哥
 <br/>博客：[https://bugstack.cn](https://bugstack.cn)
+<br/>原文：[https://bugstack.cn/md/algorithm/data-structures/2022-10-03-graph.html](https://bugstack.cn/md/algorithm/data-structures/2022-10-03-graph.html) —— Github 图片加载较慢，可以阅读原文
 
 > 沉淀、分享、成长，让自己和他人都能有所收获！😄
 

@@ -1,4 +1,10 @@
-# 2-3 树
+# 2-3树
+
+作者：小傅哥
+<br/>博客：[https://bugstack.cn](https://bugstack.cn)
+<br/>原文：[https://bugstack.cn/md/algorithm/data-structures/2022-10-01-tree-2-3.html](https://bugstack.cn/md/algorithm/data-structures/2022-10-01-tree-2-3.html) —— Github 图片加载较慢，可以阅读原文
+
+> 沉淀、分享、成长，让自己和他人都能有所收获！😄
 
 ## 一、前言
 
@@ -13,7 +19,7 @@
 2–3树是一种树型数据结构，由约翰·霍普克洛夫特于1970年发明。它通过在一个节点存放1-2个元素来平衡树高。从而也使2-3树存在2叉节点和3叉节点。
 
 <div align="center">
-    <img src="/Users/fuzhengwei1/Documents/develop/github/java-algorithms/data-structures/src/main/java/tree/images/tree-23-01.png?raw=true" width="400px">
+    <img src="https://bugstack.cn/images/article/algorithm/tree-23-01.png?raw=true" width="400px">
 </div>
 
 这里要提到一点，在BST二叉搜索树可能退化成链表的基础上。引出了自平衡二叉树，也就是包括上一章实现的AVL树和Java API HashMap中用到的红黑树，它们都属于BalancedTree，也统称为B树，平衡的意思。
@@ -25,7 +31,7 @@
 在实现2-3树之前，先通过图稿演示下在2-3树中顺序插入1、2、3、4、5、6、7，七个元素时，2-3树的调衡处理。
 
 <div align="center">
-    <img src="/Users/fuzhengwei1/Documents/develop/github/java-algorithms/data-structures/src/main/java/tree/images/tree-23-02.png?raw=true" width="600px">
+    <img src="https://bugstack.cn/images/article/algorithm/tree-23-02.png?raw=true" width="600px">
 </div>
 
 - 2-3 树的插入过程与 BST 树类似，会通过树的左右节点大小，找到自己的插入位置。
@@ -33,6 +39,8 @@
 - 如果进行一次调衡后，上一层父节点达到3个元素，则需要2次调衡，来满足2-3树的规则。
 
 **咋样**，是不看过这个图之后对于2-3树的实现已经有感觉了，想动手写写试试了？
+- 源码地址：[https://github.com/fuzhengwei/java-algorithms](https://github.com/fuzhengwei/java-algorithms)
+- 本章源码：[https://github.com/fuzhengwei/java-algorithms/tree/main/data-structures/src/main/java/tree](https://github.com/fuzhengwei/java-algorithms/tree/main/data-structures/src/main/java/tree)
 
 ## 三、2-3树结构实现
 
@@ -91,7 +99,7 @@ public class Node_2_3 {
 整个操作流程如图所示
 
 <div align="center">
-    <img src="/Users/fuzhengwei1/Documents/develop/github/java-algorithms/data-structures/src/main/java/tree/images/tree-23-03.png?raw=true" width="480px">
+    <img src="https://bugstack.cn/images/article/algorithm/tree-23-03.png?raw=true" width="480px">
 </div>
 
 #### 1. 插入父节点
