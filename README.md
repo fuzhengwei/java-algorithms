@@ -2,7 +2,8 @@
 
 ![](/docs/images/background.png?raw=true)
 
-本仓库预包含多种基于 Java 的算法与数据结构学习。学习打卡讨论：[discussions](https://github.com/fuzhengwei/java-algorithms/discussions)
+- 本仓库预包含多种基于 Java 的算法与数据结构学习。学习打卡讨论：[discussions](https://github.com/fuzhengwei/java-algorithms/discussions)
+- 关注公众号[【bugstack虫洞栈】](https://mp.weixin.qq.com/s/6ro45s4UWar7yt2gXQb5iw)回复【`数据结构`】——领取《倚天村 • 图解数据结构》PDF 方便做笔记学习
 
 ## 《倚天村 • 图解数据结构》
 
