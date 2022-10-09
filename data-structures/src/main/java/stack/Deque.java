@@ -6,4 +6,5 @@ public interface Deque<E> {
 
     E pop();
 
+    boolean isEmpty();
 }
