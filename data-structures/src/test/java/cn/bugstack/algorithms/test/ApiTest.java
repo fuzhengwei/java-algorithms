@@ -1,9 +1,20 @@
 package cn.bugstack.algorithms.test;
 
+import array_list.ArrayList;
+import array_list.List;
+import linked_list.LinkedList;
 import org.junit.jupiter.api.Test;
+import queue.DelayQueue;
+import queue.Delayed;
+import queue.Queue;
+import stack.ArrayDeque;
+import stack.Deque;
 
-import java.util.*;
-import java.util.concurrent.*;
+import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Stack;
+import java.util.concurrent.TimeUnit;
+
 
 public class ApiTest {
 
@@ -25,7 +36,7 @@ public class ApiTest {
         System.out.println(stack.pop());
         System.out.println(stack.pop());
 
-        Deque<String> deque = new LinkedList<>();
+        Deque<String> deque = new ArrayDeque<>();
         deque.push("1");
         deque.push("2");
         deque.push("3");
@@ -82,27 +93,6 @@ public class ApiTest {
         System.out.println(Arrays.toString(j));
     }
 
-    @Test
-    public void test_deque() {
-        Deque<String> deque = new LinkedList<>();
-        deque.offer("");
-        deque.push("");
-        deque.pop();
-        deque.peek();
-        String peek = deque.peek();
-
-        deque = new ArrayDeque<>();
-        deque.push("");
-
-        deque = new LinkedBlockingDeque<>();
-        deque.push("");
-
-        deque = new ConcurrentLinkedDeque<>();
-        deque.push("");
-
-        Queue delayQueue = new DelayQueue<>();
-        delayQueue.add(null);
-    }
 
     @Test
     public void test_queue() throws InterruptedException {
@@ -116,18 +106,19 @@ public class ApiTest {
         while (true) {
             Job poll = queue.poll();
             if (null == poll) {
-                Thread.sleep(10);
+                TimeUnit.MILLISECONDS.sleep(10);
                 continue;
             }
             System.out.println(poll.getName());
         }
     }
 
-    class Job implements Delayed {
+    static class Job implements Delayed, Serializable {
 
-        private String name;
-        private Long begin;
-        private Long delayTime;
+
+        private final String name;
+        private final Long begin;
+        private final Long delayTime;
 
         public Job(String name, Long delayTime) {
             this.name = name;
@@ -153,20 +144,13 @@ public class ApiTest {
 
     @Test
     public void test_Deque() {
-        Deque<String> deque = new ArrayDeque<String>(1);
+        Deque<String> deque = new ArrayDeque<>();
 
         deque.push("a");
-//        deque.push("b");
-//        deque.push("c");
-//        deque.push("d");
-//
-//        deque.offerLast("e");
-//        deque.offerLast("f");
-//        deque.offerLast("g");
-//        deque.offerLast("h");  // 这时候扩容了
-
-//        deque.push("i");
-//        deque.offerLast("j");
+        deque.push("b");
+        deque.push("c");
+        deque.push("d");
+        deque.push("i");
 
         System.out.println("数据出栈：");
         while (!deque.isEmpty()) {

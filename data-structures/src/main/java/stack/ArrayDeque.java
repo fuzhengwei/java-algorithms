@@ -32,6 +32,7 @@ public class ArrayDeque<E> implements Deque<E> {
         elements = new Object[2];
     }
 
+
     /**
      * 双端队列的容量翻倍。仅在满时调用，即当头部和尾部缠绕成相等时。
      */
@@ -84,6 +85,11 @@ public class ArrayDeque<E> implements Deque<E> {
         head = (h + 1) & (elements.length - 1);
         logger.info("pop.idx {} = {} & {}", head, Integer.toBinaryString(h + 1), Integer.toBinaryString(elements.length - 1));
         return result;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return head == tail;
     }
 
 }
