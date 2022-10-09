@@ -2,7 +2,9 @@
 
 ![](/docs/images/background.png?raw=true)
 
-本仓库预包含多种基于 Java 的算法与数据结构学习。
+- 本仓库预包含多种基于 Java 的算法与数据结构学习。学习打卡讨论：[discussions](https://github.com/fuzhengwei/java-algorithms/discussions)
+- 关注公众号[【bugstack虫洞栈】](https://mp.weixin.qq.com/s/6ro45s4UWar7yt2gXQb5iw)回复【`数据结构`】——领取《倚天村 • 图解数据结构》PDF 方便做笔记学习
+- 也欢迎你成为contributors的一员，你可以提交issue、pr，贡献资料（源码 + 文档）**注意和现有风格保持一致**
 
 ## 《倚天村 • 图解数据结构》
 
@@ -38,7 +40,7 @@
 
 - [x] [`A` 布隆过滤器 Bloom Filter](https://bugstack.cn/md/algorithm/data-structures/2022-10-05-bloom-filter.html)
 
-## 《屠龙村 • 图解算法逻辑》
+## 《屠龙村 • 手撕算法逻辑》
 
 算法是如何解决一类问题的明确规范。算法是一组精确定义操作序列的规则。
 
