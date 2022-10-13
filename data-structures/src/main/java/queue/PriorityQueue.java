@@ -49,7 +49,7 @@ public class PriorityQueue<E> implements Queue<E> {
                 (oldCapacity + 2) :
                 (oldCapacity >> 1));
         // overflow-conscious code
-        if (newCapacity - Integer.MAX_VALUE - 8 > 0)
+        if (newCapacity - (Integer.MAX_VALUE - 8) > 0)
             newCapacity = (minCapacity > Integer.MAX_VALUE - 8) ?
                     Integer.MAX_VALUE :
                     Integer.MAX_VALUE - 8;
