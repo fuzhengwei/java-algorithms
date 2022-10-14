@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.BitSet;
+import java.util.Random;
 
 /**
  * @author 小傅哥，微信：fustack
@@ -27,7 +28,7 @@ public class BloomFilterTest {
         BloomFilter filter = new BloomFilter(Integer.MAX_VALUE, new int[]{7, 19, 43, 77});
         filter.add(val00);
         filter.add(val01);
-         filter.add(val02);
+        filter.add(val02);
 
         logger.info("测试结果 val00：{} 布隆过滤器：{}", val00, filter.contains(val00));
         logger.info("测试结果 val01：{} 布隆过滤器：{}", val01, filter.contains(val01));
@@ -52,6 +53,22 @@ public class BloomFilterTest {
         System.out.println("成昆".hashCode() & (8 - 1));
 
         System.out.println(Integer.toBinaryString(6));
+    }
+
+    @Test
+    public void test_random() {
+        BloomFilter filter = new BloomFilter(Integer.MAX_VALUE, new int[]{7, 19, 43, 77});
+        for (int i = 0; i < 8000; i++) {
+            StringBuilder code = new StringBuilder();
+            for (int j = 0; j < 6; j++) {
+                code.append(new Random().nextInt(9));
+            }
+            if (filter.contains(code.toString())) {
+                System.out.println("碰撞：" + code);
+                continue;
+            }
+            filter.add(code.toString());
+        }
     }
 
 }
