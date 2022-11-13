@@ -60,10 +60,10 @@ int e = 15;// 1111
 System.out.println(Integer.toBinaryString(a & e)); // 0001
 // 或运算；0011
 System.out.println(Integer.toBinaryString(a | b)); // 0011
-// 非运算；0101
+// 异或运算；0101
 System.out.println(Integer.toBinaryString(a ^ c)); // 0101
-// 异或运算；...11110111
-System.out.println(Integer.toBinaryString(~d));
+// 非运算；0111
+System.out.println(Integer.toBinaryString(~d)); //0111
 ```
 
 - 与运算；两个数都转为二进制，然后从高位开始比较，如果两个数都为1则为1，否则为0。
