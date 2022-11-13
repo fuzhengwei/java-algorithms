@@ -1,5 +1,11 @@
 # 《程序员数学：位运算》—— 如何使用二进制计算乘法？
 
+作者：小傅哥
+<br/>博客：[https://bugstack.cn](https://bugstack.cn)
+<br/>源码：[https://github.com/fuzhengwei/java-algorithms](https://github.com/fuzhengwei/java-algorithms)
+
+> 沉淀、分享、成长，让自己和他人都能有所收获！😄
+
 ## 一、前言
 
 `你是什么时候注意到位运算？`

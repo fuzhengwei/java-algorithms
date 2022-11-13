@@ -1,5 +1,11 @@
 # 《程序员数学：阶乘》—— 阶乘的用途是什么？
 
+作者：小傅哥
+<br/>博客：[https://bugstack.cn](https://bugstack.cn)
+<br/>源码：[https://github.com/fuzhengwei/java-algorithms](https://github.com/fuzhengwei/java-algorithms)
+
+> 沉淀、分享、成长，让自己和他人都能有所收获！😄
+
 ## 一、前言
 
 `阶乘的历史`
