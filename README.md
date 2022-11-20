@@ -50,10 +50,10 @@
 ### 算法主题
 
 - **数学**
-  - [x] `B` [位运算](https://bugstack.cn/md/algorithm/logic/math/2022-10-30-bits.html) - set/get/update/clear 位、乘以/除以二进制位 、变负等
-  - [x] `B` [阶乘](https://bugstack.cn/md/algorithm/logic/math/2022-10-30-factorial.html)
-  - [x] `B` [斐波那契数](https://bugstack.cn/md/algorithm/logic/math/2022-11-05-fibonacci.html) - `经典` 和 `闭式` 版本
-  - [ ] `B` [素数检测](#) (排除法)
+  - [x] `B` [位运算](https://bugstack.cn/md/algorithm/logic/math/2022-10-30-bits.html) —— 如何使用二进制计算乘法？
+  - [x] `B` [阶乘](https://bugstack.cn/md/algorithm/logic/math/2022-10-30-factorial.html) —— 阶乘的用途是什么？
+  - [x] `B` [斐波那契数](https://bugstack.cn/md/algorithm/logic/math/2022-11-05-fibonacci.html) —— 为什么不能用斐波那契散列，做数据库路由算法？
+  - [x] `B` [素数检测](https://bugstack.cn/md/algorithm/logic/math/2022-11-20-primality.html) —— 你真的了解 RSA 加密算法吗？
   - [ ] `B` [欧几里得算法](#) - 计算最大公约数 (GCD)
   - [ ] `B` [最小公倍数](#) (LCM)
   - [ ] `B` [素数筛](#) - 查找任意给定范围内的所有素数
