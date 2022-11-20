@@ -30,3 +30,5 @@ hs_err_pid*
 /data-structures/src/main/java/*/draw/.*.bkp
 /logic/logic.iml
 /logic/src/main/java/math/fibonacci/~*.xlsx
+/logic/src/main/java/*/*/draw/.*.bkp
+/logic/src/main/java/*/*/draw/.*.dtmp
