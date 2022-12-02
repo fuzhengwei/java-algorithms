@@ -45,9 +45,11 @@ public class HashMap04ByCoalescedHashing<K, V> implements Map<K, V> {
     @Override
     public V get(K key) {
         int idx = key.hashCode() & (tab.length - 1);
-        while (tab[idx].key != key) {
+        while (tab[idx] != null && tab[idx].key != key) {
             idx = tab[idx].idxOfNext;
         }
+        if (tab[idx] == null)
+            return null;
         return tab[idx].value;
     }
 
