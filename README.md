@@ -68,6 +68,5 @@
 
 ## 资料
 
-- [https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%AF%E8%AF%AD%E5%88%97%E8%A1%A8](https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%AF%E8%AF%AD%E5%88%97%E8%A1%A8)
-- [https://en.wikipedia.org/](https://en.wikipedia.org/) - wiki文档
-- [https://github.com/trekhleb/javascript-algorithms](https://github.com/trekhleb/javascript-algorithms) - javascript数据结构
+- [数据结构术语列表](https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%9C%AF%E8%AF%AD%E5%88%97%E8%A1%A8)
+- [javascript数据结构](https://github.com/trekhleb/javascript-algorithms)
