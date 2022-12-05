@@ -55,7 +55,7 @@
   - [x] `B` [斐波那契数](https://bugstack.cn/md/algorithm/logic/math/2022-11-05-fibonacci.html) —— 为什么不能用斐波那契散列，做数据库路由算法？
   - [x] `B` [素数检测](https://bugstack.cn/md/algorithm/logic/math/2022-11-20-primality.html) —— 你真的了解 RSA 加密算法吗？
   - [x] `B` [欧几里得算法](https://bugstack.cn/md/algorithm/logic/math/2022-11-28-euclidean.html) —— 如何编码程序计算最大公约数
-  - [ ] `B` [`最小公倍数`](#) 
+  - [x] `B` [最小公倍数](https://bugstack.cn/md/algorithm/logic/math/2022-12-04-least-common-multiple.html) —— 你能用几种代码实现出计算公倍数？
   - [ ] `B` [`素数筛`](#)
   - [ ] `B` [`判断 2 次方数`](#)
   - [ ] `B` [`杨辉三角形`](#)
