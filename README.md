@@ -29,8 +29,8 @@
   - [x] [`A` AVL 树](https://bugstack.cn/md/algorithm/data-structures/2022-09-26-tree-avl.html)
   - [x] [`A` 2-3树](https://bugstack.cn/md/algorithm/data-structures/2022-10-01-tree-2-3.html)
   - [x] [`A` 红黑树](https://bugstack.cn/md/algorithm/data-structures/2022-10-02-tree-red-black.html)
-  - [ ] `A` 线段树 - 使用 最小/最大/总和 范围查询示例
-  - [ ] `A` 树状数组 (二叉索引树)
+  - [ ] [`A` 线段树【欢迎PR】](https://github.com/fuzhengwei/java-algorithms/blob/main/data-structures/src/main/java/tree/SegmentTree.java) - 使用 最小/最大/总和 范围查询示例
+  - [ ] [`A` 树状数组【欢迎PR】](https://github.com/fuzhengwei/java-algorithms/blob/main/data-structures/src/main/java/tree/FenwickTree.java) (二叉索引树)
 
 ### 图论
 
