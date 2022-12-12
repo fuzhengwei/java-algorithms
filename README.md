@@ -56,8 +56,8 @@
   - [x] `B` [素数检测](https://bugstack.cn/md/algorithm/logic/math/2022-11-20-primality.html) —— 你真的了解 RSA 加密算法吗？
   - [x] `B` [欧几里得算法](https://bugstack.cn/md/algorithm/logic/math/2022-11-28-euclidean.html) —— 如何编码程序计算最大公约数
   - [x] `B` [最小公倍数](https://bugstack.cn/md/algorithm/logic/math/2022-12-04-least-common-multiple.html) —— 你能用几种代码实现出计算公倍数？
-  - [ ] `B` 素数筛
-  - [ ] `B` 判断 2 次方数
+  - [x] `B` [素数筛](https://bugstack.cn/md/algorithm/logic/math/2022-12-11-sieve-of-eratosthenes.html)
+  - [x] `B` [判断 2 次方数](https://bugstack.cn/md/algorithm/logic/math/2022-12-12-is-power-of-two.html)
   - [ ] `B` 杨辉三角形
   - [ ] `B` 复数
   - [ ] `B` 弧度和角 
