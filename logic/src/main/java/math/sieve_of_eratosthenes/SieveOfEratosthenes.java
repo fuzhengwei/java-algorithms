@@ -12,6 +12,37 @@ import java.util.*;
  */
 public class SieveOfEratosthenes {
 
+    public List<Integer> sieveOfLinear(int maxNumber) {
+        // 方便打印结果，可删除此代码
+        Map<Integer, List<Integer>> primesMap = new HashMap<>();
+
+        List<Integer> isPrime = new ArrayList<>(maxNumber + 1);
+        isPrime.add(0);
+        isPrime.add(1);
+
+        List<Integer> primes = new ArrayList<>();
+        for (int number = 2; number < maxNumber; number++) {
+            if (!isPrime.contains(number)) {
+                primes.add(number);
+                // 方便打印结果，可删除此代码
+                primesMap.put(number, new ArrayList<>());
+            }
+            for (int i = 0; i < primes.size() && primes.get(i) <= maxNumber / number; i ++) {
+                isPrime.add(primes.get(i) * number);
+                primesMap.get(primes.get(i)).add(primes.get(i) * number);
+                if (number % primes.get(i) == 0) {
+                    break;
+                }
+            }
+        }
+        System.out.println("筛选素数过程");
+        for (Integer key : primesMap.keySet()) {
+            System.out.println(key + "：" + JSON.toJSONString(primesMap.get(key)));
+        }
+        return primes;
+    }
+
+
     public List<Integer> sieveOfEratosthenes(int maxNumber) {
         // 方便打印结果，可删除此代码
         Map<Integer, List<Integer>> primesMap = new HashMap<>();
@@ -38,11 +69,10 @@ public class SieveOfEratosthenes {
 
                 int nextNumber = number * number;
                 while (nextNumber <= maxNumber) {
-                    isPrime.add(nextNumber);
-                    nextNumber += number;
-
                     // 方便打印结果，可删除此代码
                     primesMap.get(number).add(nextNumber);
+                    isPrime.add(nextNumber);
+                    nextNumber += number;
                 }
             }
         }
