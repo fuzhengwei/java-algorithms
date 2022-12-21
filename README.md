@@ -58,7 +58,7 @@
   - [x] `B` [最小公倍数](https://bugstack.cn/md/algorithm/logic/math/2022-12-04-least-common-multiple.html) —— 你能用几种代码实现出计算公倍数？
   - [x] `B` [素数筛](https://bugstack.cn/md/algorithm/logic/math/2022-12-11-sieve-of-eratosthenes.html)
   - [x] `B` [判断 2 次方数](https://bugstack.cn/md/algorithm/logic/math/2022-12-12-is-power-of-two.html)
-  - [ ] `B` 杨辉三角形
+  - [x] `B` [杨辉三角形](https://bugstack.cn/md/algorithm/logic/math/2022-12-18-pascal-triangle.html)
   - [ ] `B` 复数
   - [ ] `B` 弧度和角 
   - [ ] `B` 快速算次方
