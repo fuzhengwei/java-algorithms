@@ -59,8 +59,7 @@
   - [x] `B` [素数筛](https://bugstack.cn/md/algorithm/logic/math/2022-12-11-sieve-of-eratosthenes.html)
   - [x] `B` [判断 2 次方数](https://bugstack.cn/md/algorithm/logic/math/2022-12-12-is-power-of-two.html)
   - [x] `B` [杨辉三角形](https://bugstack.cn/md/algorithm/logic/math/2022-12-18-pascal-triangle.html)
-  - [ ] `B` 复数
-  - [ ] `B` 弧度和角 
+  - [x] `B` [弧度和角](https://bugstack.cn/md/algorithm/logic/math/2022-12-23-radian.html)
   - [ ] `B` 快速算次方
   - [ ] `A` 整数拆分
   - [ ] `A` 割圆术
