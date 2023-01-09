@@ -19,7 +19,7 @@
 刘徽从一个六边形开始。设是六边形`M`一侧的长度，是圆的半径。`AB``r`
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/logic/src/main/java/math/liu_hui/images/liu-hui-01.png?raw=true" width="400px">
+    <img src="https://bugstack.cn/images/article/algorithm/logic/liu-hui-01.png?raw=true" width="400px">
 </div>
 
 `AB`用线平分`OPC`，`AC`成为十二边形（12 边形）的一侧，令其长度为`m`。让 be 的长度和be`PC`的`j`长度。`OP``G
@@ -27,7 +27,7 @@
 `AOP`,`APC`是两个直角三角形。刘徽反复引用[勾股定理](https://en.wikipedia.org/wiki/Pythagorean_theorem)（勾股定理）：
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/logic/src/main/java/math/liu_hui/images/liu-hui-02.png?raw=true" width="400px">
+    <img src="https://bugstack.cn/images/article/algorithm/logic/liu-hui-02.png?raw=true" width="400px">
 </div>
 
 从这里开始，现在有一种从 确定的技术`m`，`M`它给出了具有两倍边数的多边形的边长。从六边形开始，刘辉可以用这个公式计算出十二边形的边长。然后在给定十二边形的边长的情况下继续重复确定 24 边形的边长。他可以根据需要递归多次执行此操作。知道了如何确定这些多边形的面积，刘辉就可以进行近似了`π`。

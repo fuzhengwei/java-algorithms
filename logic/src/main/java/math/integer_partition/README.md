@@ -1,4 +1,4 @@
-# 《程序员数学：整数拆分》—— Math.pow() 函数源码如何实现的？
+# 《程序员数学：整数拆分》
 
 作者：小傅哥
 <br/>博客：[https://bugstack.cn](https://bugstack.cn)
@@ -23,7 +23,7 @@
 在维基百科中介绍，有两种常用的图解方法来表示分区：以Norman Macleod Ferrers命名的 Ferrers 图和以Alfred Young命名的 Young 图。两者都有几种可能的约定；在这里，我们使用英文符号，图表在左上角对齐。
 
 <div align="center">
-    <img src="/Users/fuzhengwei1/Documents/develop/github/java-algorithms/logic/src/main/java/math/integer_partition/images/integer-partition-01.png?raw=true" width="650px">
+    <img src="https://bugstack.cn/images/article/algorithm/logic/integer-partition-01.png?raw=true" width="650px">
 </div>
 
 - 与正整数 1 到 8 的分区相关联的Young 图。它们的排列使得正方形主对角线反射下的图像是共轭分区。
@@ -64,11 +64,11 @@ public static int integerPartition(int number) {
 ```
 
 <div align="center">
-    <img src="/Users/fuzhengwei1/Documents/develop/github/java-algorithms/logic/src/main/java/math/integer_partition/images/integer-partition-03.png?raw=true" width="850px">
+    <img src="https://bugstack.cn/images/article/algorithm/logic/integer-partition-03.png?raw=true" width="850px">
 </div>
 
 <div align="center">
-    <img src="/Users/fuzhengwei1/Documents/develop/github/java-algorithms/logic/src/main/java/math/integer_partition/images/integer-partition-02.png?raw=true" width="250px">
+    <img src="https://bugstack.cn/images/article/algorithm/logic/integer-partition-02.png?raw=true" width="250px">
 </div>
 
 - 这段代码使用了动态规划来求解数字分割问题。它首先创建了一个 `number+1` 行 `number+1` 列的二维数组 `partitionMatrix`，然后使用三重循环来填充这个数组。

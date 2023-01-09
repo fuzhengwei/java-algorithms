@@ -11,7 +11,7 @@
 不知道读者伙伴用了那么久的 Java Math 函数，是否有打开它的源码，看看是如何实现的。比如 `Math.pow` 函数计算数字的次方值，只要你打开它的源码，你会惊讶到；`这在弄啥，这都是啥，这要干啥`！
 
 <div align="center">
-    <img src="/Users/fuzhengwei1/Documents/develop/github/java-algorithms/logic/src/main/java/math/fast_powering/images/fast-powering-02.png?raw=true" width="650px">
+    <img src="https://bugstack.cn/images/article/algorithm/logic/fast-powering-02.png?raw=true" width="650px">
 </div>
 
 这是啥，这就是一段用于计算次方的算法。简单来说，它是通过在 Math.pow 中预先构建了一个基于查表的算法，保存了常用的幂的值，然后使用这些值来快速计算幂次方。
@@ -23,7 +23,7 @@
 其实无论是那样一种计算次幂的方式，都离不开核心的基础模型。也就是说，任何一个数的次幂，都是这个次幂下数字的乘积累计值。包括使用递归、还是通过二进制数字移位，最终都要归到幂的乘积。
 
 <div align="center">
-    <img src="/Users/fuzhengwei1/Documents/develop/github/java-algorithms/logic/src/main/java/math/fast_powering/images/fast-powering-01.png?raw=true" width="650px">
+    <img src="https://bugstack.cn/images/article/algorithm/logic/fast-powering-01.png?raw=true" width="650px">
 </div>
 
 - 这里举例了2^4次幂递归计算和2^10次幂使用二进制移位。

@@ -32,7 +32,7 @@
 定义如下：
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/logic/src/main/java/math/fourier_transform/images/fourier-transform-08.png?raw=true" width="500px">
+    <img src="https://bugstack.cn/images/article/algorithm/logic/fourier-transform-08.png?raw=true" width="500px">
 </div>
 
 **离散时间傅立叶变换**( **DTFT** ) 是傅立叶分析的一种形式，适用于连续函数的均匀间隔样本。术语离散时间是指变换对离散数据（样本）进行操作，其间隔通常具有时间单位。它仅从样本中生成一个频率函数，该函数是原始连续函数的连续傅立叶变换的周期性求和。
@@ -44,7 +44,7 @@
 时域和频域中的信号视图：
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/logic/src/main/java/math/fourier_transform/images/fourier-transform-01.png?raw=true" width="500px">
+    <img src="https://bugstack.cn/images/article/algorithm/logic/fourier-transform-01.png?raw=true" width="500px">
 </div>
 
 FFT 算法计算序列的离散傅立叶变换 (DFT) 或其逆变换 (IFFT)。傅立叶分析将信号从其原始域转换为频域中的表示，反之亦然。FFT 通过将 DFT 矩阵分解为稀疏（大部分为零）因子的乘积来快速计算此类变换。因此，它设法降低了从 O(n 2 ) 计算 DFT 的复杂性，如果简单地将 DFT 的定义应用到 O(n log n)，就会出现这种复杂性，其中 n 是数据大小。
@@ -52,7 +52,7 @@ FFT 算法计算序列的离散傅立叶变换 (DFT) 或其逆变换 (IFFT)。�
 这里对 10、20、30、40 和 50 Hz 的余弦波之和进行离散傅立叶分析：
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/logic/src/main/java/math/fourier_transform/images/fourier-transform-02.png?raw=true" width="650px">
+    <img src="https://bugstack.cn/images/article/algorithm/logic/fourier-transform-02.png?raw=true" width="650px">
 </div>
 
 ## 三、解释
@@ -60,11 +60,11 @@ FFT 算法计算序列的离散傅立叶变换 (DFT) 或其逆变换 (IFFT)。�
 傅立叶变换是有史以来最深刻的见解之一。不幸的是，含义隐藏在密集的方程式中：
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/logic/src/main/java/math/fourier_transform/images/fourier-transform-03.png?raw=true" width="350px">
+    <img src="https://bugstack.cn/images/article/algorithm/logic/fourier-transform-03.png?raw=true" width="350px">
 </div>
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/logic/src/main/java/math/fourier_transform/images/fourier-transform-04.png?raw=true" width="350px">
+    <img src="https://bugstack.cn/images/article/algorithm/logic/fourier-transform-04.png?raw=true" width="350px">
 </div>
 
 与其跳入符号，不如让我们亲身体验一下关键思想。这是一个通俗易懂的比喻：
@@ -79,7 +79,7 @@ FFT 算法计算序列的离散傅立叶变换 (DFT) 或其逆变换 (IFFT)。�
 傅立叶变换是关于圆形路径（不是一维正弦曲线），而欧拉公式是一种生成路径的巧妙方法：
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/logic/src/main/java/math/fourier_transform/images/fourier-transform-05.png?raw=true" width="450px">
+    <img src="https://bugstack.cn/images/article/algorithm/logic/fourier-transform-05.png?raw=true" width="450px">
 </div>
 
 一定要用虚指数绕圈吗？没有。但它方便且紧凑。当然，我们可以将我们的路径描述为二维（真实和虚构）的协调运动，但不要忘记大局：我们只是在绕圈移动。
@@ -91,7 +91,7 @@ FFT 算法计算序列的离散傅立叶变换 (DFT) 或其逆变换 (IFFT)。�
 傅立叶变换逐个频率地构建配方：
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/logic/src/main/java/math/fourier_transform/images/fourier-transform-06.png?raw=true" width="750px">
+    <img src="https://bugstack.cn/images/article/algorithm/logic/fourier-transform-06.png?raw=true" width="750px">
 </div>
 
 一些注意事项：
@@ -108,7 +108,7 @@ FFT 算法计算序列的离散傅立叶变换 (DFT) 或其逆变换 (IFFT)。�
 Stuart Riffle 对傅立叶变换有很好的解释：
 
 <div align="center">
-    <img src="/Users/fuzhengwei/1024/github/java-algorithms/logic/src/main/java/math/fourier_transform/images/fourier-transform-07.png?raw=true" width="350px">
+    <img src="https://bugstack.cn/images/article/algorithm/logic/fourier-transform-07.png?raw=true" width="350px">
 </div>
 
 ## 四、实现
