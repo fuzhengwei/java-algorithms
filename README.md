@@ -60,10 +60,24 @@
   - [x] `B` [判断 2 次方数](https://bugstack.cn/md/algorithm/logic/math/2022-12-12-is-power-of-two.html)
   - [x] `B` [杨辉三角形](https://bugstack.cn/md/algorithm/logic/math/2022-12-18-pascal-triangle.html)
   - [x] `B` [弧度和角](https://bugstack.cn/md/algorithm/logic/math/2022-12-23-radian.html)
-  - [ ] `B` 快速算次方
-  - [ ] `A` 整数拆分
-  - [ ] `A` 割圆术
-  - [ ] `A` 离散傅里叶变换 
+  - [x] `B` [快速算次方](https://bugstack.cn/md/algorithm/logic/math/2023-01-08-fast-powering.html)
+  - [x] `A` [整数拆分](https://bugstack.cn/md/algorithm/logic/math/2023-01-08-integer-partition.html)
+  - [x] `A` [割圆术](https://bugstack.cn/md/algorithm/logic/math/2023-01-09-liu-hui.html)
+  - [x] `A` [离散傅里叶变换](https://bugstack.cn/md/algorithm/logic/math/2023-01-09-fourier-transform.html) 
+  
+- **集合**
+  - [x] `B` [笛卡尔积 - 多集合结果](https://bugstack.cn/md/algorithm/logic/sets/2023-02-09-cartesian-product.html)
+  - [x] `A` [洗牌算法 - 随机置换有限序列](https://bugstack.cn/md/algorithm/logic/sets/2023-02-10-fisher-yates.html)
+  - [x] `A` [幂集 - 该集合的所有子集](https://bugstack.cn/md/algorithm/logic/sets/2023-02-11-power-set.html)
+  - [x] `A` [排列 (有/无重复)](https://bugstack.cn/md/algorithm/logic/sets/2023-02-12-permutations.html)
+  - [x] `A` [组合 (有/无重复)](https://bugstack.cn/md/algorithm/logic/sets/2023-02-13-combinations.html)
+  - [ ] `A` [最长公共子序列 (LCS)](#)
+  - [ ] `A` [最长递增子序列](#)
+  - [ ] `A` [最短公共父序列 (SCS)](#)
+  - [ ] `A` [背包问题 - 0/1 和 无边界 问题](#)
+  - [ ] `A` [最大子数列问题 - BF 算法 和 动态规划](#)
+  - [ ] `A` [组合求和 - 查找形成特定总和的所有组合](#)
+
 
 ## 资料
 
