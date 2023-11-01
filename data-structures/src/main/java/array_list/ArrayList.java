@@ -45,10 +45,13 @@ public class ArrayList<E> implements List<E> {
         // 判断扩容操作
         if (minCapacity - elementData.length > 0) {
             int oldCapacity = elementData.length;
+            // 扩容为原容量的 1.5 倍
             int newCapacity = oldCapacity + (oldCapacity >> 1);
             if (newCapacity - minCapacity < 0) {
+                // 如果计算得到的新容量小于 minCapacity，则直接使用 minCapacity
                 newCapacity = minCapacity;
             }
+            // 扩容数组
             elementData = Arrays.copyOf(elementData, newCapacity);
         }
         // 添加元素
