@@ -1,5 +1,7 @@
 package linked_list;
 
+import java.util.Objects;
+
 /**
  * @author 小傅哥，微信：fustack
  * @description 实现双向链表
@@ -60,22 +62,22 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public boolean remove(Object o) {
-        if (o == null) {
-            for (Node<E> x = first; x != null; x = x.next) {
-                if (x.item == null) {
-                    unlink(x);
-                    return true;
-                }
+        // 在循环外部声明变量，用于记录是否找到匹配项
+        boolean found = false;
+
+        // 遍历链表
+        Node<E> x = first;
+        while (x != null) {
+            if (Objects.equals(o, x.item)) {
+                // 找到匹配项，调用 unlink 方法移除节点
+                unlink(x);
+                found = true;
+                break; // 找到匹配项后立即跳出循环
             }
-        } else {
-            for (Node<E> x = first; x != null; x = x.next) {
-                if (o.equals(x.item)) {
-                    unlink(x);
-                    return true;
-                }
-            }
+            x = x.next;
         }
-        return false;
+
+        return found;
     }
 
     E unlink(Node<E> x) {
