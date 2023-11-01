@@ -127,6 +127,7 @@ public class LinkedList<E> implements List<E> {
 
     Node<E> node(int index) {
         if (index < (size >> 1)) {
+            // 如果索引小于链表长度的一半，则从头部开始遍历链表
             Node<E> x = first;
             for (int i = 0; i < index; i++)
                 x = x.next;
